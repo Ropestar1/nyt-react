@@ -1,8 +1,7 @@
-// Include React
 var React = require("react");
+var Link = require("react-router").Link;
 
-// Creating the Form component
-var Form = React.createClass({
+var Search = React.createClass({
 
   // Here we set a generic state associated with the text being searched for
   getInitialState: function() {
@@ -91,5 +90,4 @@ var Form = React.createClass({
   }
 });
 
-// Export the component back for use in other files
-module.exports = Form;
+module.exports = Search;

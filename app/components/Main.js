@@ -1,15 +1,20 @@
 var React = require("react");
+var Link = require("react-router").Link;
 
 var Form = require("./children/Form");
-var Results = require("./children/Results");
 var Saved = require("./children/Saved");
 
 var helpers = require("./utils/helpers");
 
+
 var Main = React.createClass({
 
 	getInitialState: function() {
-    	return { title: "", startYear:"", endYear: ""};
+    	return { 
+    		title: "",
+    		startYear:"",
+    		endYear: ""
+    	};
   	},
 
   	// componentDidMount: function() {
@@ -17,14 +22,14 @@ var Main = React.createClass({
   	// 	helpers.getArticles
   	// }
 
-  	componentDidUpdate: function() {
-  		helpers.runQuery(this.state.title,this.state.startYear,this.state.endYear).then(function(data) {
-  			console.log(data);
-  		})
-  	},
-  	setTerm: function(title,startYear,endYear) {
-    this.setState({ title: title,startYear:startYear,endYear:endYear});
-  	},
+  	// componentDidUpdate: function() {
+  	// 	helpers.runQuery(this.state.title,this.state.startYear,this.state.endYear).then(function(data) {
+  	// 		console.log(data);
+  	// 	})
+  	// },
+  	// setTerm: function(title,startYear,endYear) {
+   //  this.setState({ title: title,startYear:startYear,endYear:endYear});
+  	// },
 	  render: function() {
 	    return (
 	      <div className="container">
@@ -34,8 +39,8 @@ var Main = React.createClass({
 	          </div>
 
 	          <div className="col-md-6">
-
-	            <Form setTerm={this.setTerm} />
+	          	{/*this will drop the correct children????*/}
+	          	{this.props.children}
 
 	          </div>
 
