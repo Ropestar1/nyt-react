@@ -13,9 +13,9 @@ var Results = React.createClass({
         </div>
         <div className="panel-body text-center">
           <h1>Title:</h1>
-          <p>{this.props.title}</p>
+          {/*<p>{this.props.title}</p>*/}
           <h1>Link:</h1>
-          <p>{this.props.link}</p>
+          {/*<p>{this.props.link}</p>*/}
         </div>
       </div>
     );

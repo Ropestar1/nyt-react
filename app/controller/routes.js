@@ -15,10 +15,9 @@ var hashHistory = router.hashHistory;
 // Include the IndexRoute (catch-all route)
 var IndexRoute = router.IndexRoute;
 
-
-var Main = require("../app/components/Main");
-var Search = require("../app/components/children/Search");
-var Saved = require("../app/components/children/Saved");
+var Main = require("../components/Main");
+var Search = require("../components/children/Search");
+var Saved = require("../components/children/Saved");
 
 // Export the Routes
 module.exports = (

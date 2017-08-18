@@ -20,7 +20,7 @@ var Search = React.createClass({
   },
 
   // When a user submits...
-  handleSubmit: function(event) {
+  /*handleSubmit: function(event) {
     // prevent the HTML from trying to submit a form if the user hits "Enter" instead of
     // clicking the button
     event.preventDefault();
@@ -28,7 +28,7 @@ var Search = React.createClass({
     // Set the parent to have the search term
     this.props.setTerm(this.state.term); //where is setTerm
     this.setState({ term: "" });
-  },
+  }, */
   // Here we describe this component's render method
   render: function() {
     return (
@@ -37,7 +37,7 @@ var Search = React.createClass({
           <h3 className="panel-title text-center">Query</h3>
         </div>
         <div className="panel-body text-center">
-          <form onSubmit={this.handleSubmit}>
+          <form /*onSubmit={this.handleSubmit}*/>
             <div className="form-group">
               <h4 className="">
                 <strong>Location</strong>
@@ -63,7 +63,7 @@ var Search = React.createClass({
                 type="text"
                 className="form-control text-center"
                 id="start"
-                onChange={this.handleChange}
+                /*onChange={this.handleChange}*/
                 required
               />
               <input
