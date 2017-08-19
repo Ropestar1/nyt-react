@@ -23,8 +23,7 @@ var Saved = require("../components/children/Saved");
 module.exports = (
 	<Router history={hashHistory}>
 		<Route path="/" component={Main}>
-			<Route path="Search" component={Search} />
-			<Route path="Saved" component={Saved} />
+			
 		</Route>
 	</Router>
 );

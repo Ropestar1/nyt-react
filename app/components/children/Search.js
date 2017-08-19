@@ -12,36 +12,29 @@ var Search = React.createClass({
     };
   },
 
-  // This function will respond to the user input
-  handleChange: function(event) {
-    // work on this part
-    this.setState({ title: event.target.value }, {});
-
-  },
-
-  // When a user submits...
-  /*handleSubmit: function(event) {
-    // prevent the HTML from trying to submit a form if the user hits "Enter" instead of
-    // clicking the button
+  handleSubmit: function(event) {
     event.preventDefault();
 
-    // Set the parent to have the search term
-    this.props.setTerm(this.state.term); //where is setTerm
-    this.setState({ term: "" });
-  }, */
+    this.props.setTerm(this.state.term); //setTerm was defined in parent in earlier examples
+    this.setState({
+      topic: "",
+      start: "",
+      end: ""
+    });
+  },
   // Here we describe this component's render method
   render: function() {
     return (
       <div className="panel panel-default">
         <div className="panel-heading">
-          <h3 className="panel-title text-center">Query</h3>
+          <h3 className="panel-title text-center">Article Search</h3>
         </div>
         <div className="panel-body text-center">
           <form /*onSubmit={this.handleSubmit}*/>
             <div className="form-group">
-              <h4 className="">
-                <strong>Location</strong>
-              </h4>
+              <h3 className="topic">
+                <strong>Topic</strong>
+              </h3>
 
               {/*
                 Note how each of the form elements has an id that matches the state.
@@ -50,13 +43,16 @@ var Search = React.createClass({
               */}
               <input
                 // fix below code
-                value={this.state.title}
+                value={this.state.topic}
                 type="text"
                 className="form-control text-center"
-                id="title"
+                id="topic"
                 onChange={this.handleChange}
                 required
               />
+              <h3 className="start-year">
+                <strong>Start Year</strong>
+              </h3>
               <input
                 // fix below code
                 value={this.state.start}
@@ -66,6 +62,9 @@ var Search = React.createClass({
                 /*onChange={this.handleChange}*/
                 required
               />
+              <h3 className="end-Year">
+                <strong>End Year</strong>
+              </h3>
               <input
                 // fix below code
                 value={this.state.end}

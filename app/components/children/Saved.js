@@ -1,26 +1,30 @@
-// Include React
 var React = require("react");
 var Link = require("react-router").Link;
 
-// Creating the Results component
-var Results = React.createClass({
-  // Here we render the function
+var Saved = React.createClass({
   render: function() {
     return (
       <div className="panel panel-default">
         <div className="panel-heading">
-          <h3 className="panel-title text-center">Results</h3>
+          <h3 className="panel-title text-center">Saved Articles</h3>
         </div>
-        <div className="panel-body text-center">
-          <h1>Title:</h1>
-          {/*<p>{this.props.title}</p>*/}
-          <h1>Link:</h1>
-          {/*<p>{this.props.link}</p>*/}
+        <div className="panel-body">
+
+          <div className="panel panel-default">
+            <div className="panel-heading">
+              <h4>Title:</h4>
+              {/*<p>{this.props.title}</p>*/}
+            </div>
+            <div className="panel-body">
+              <h4>Link:</h4>
+              {/*<p>{this.props.link}</p>*/}
+            </div>
+          </div>
+
         </div>
       </div>
     );
   }
 });
 
-// Export the component back for use in other files
-module.exports = Results;
+module.exports = Saved;
