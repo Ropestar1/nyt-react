@@ -1,6 +1,3 @@
-
-
-
 var db = require("../models");
 
 // Routes

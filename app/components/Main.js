@@ -1,25 +1,25 @@
-var React = require("react");
-var Link = require("react-router").Link;
+import React from 'react';
+import Link from 'react-router-dom';
 
-var Search = require("./children/Search");
-var Saved = require("./children/Saved");
+import Search from './children/Search';
+import Saved from './children/Saved';
 
-var helpers = require("./utils/helpers");
+import helpers from './utils/helpers';
 
+class Main extends React.Component {
+  constructor(props) {
+    super(props);
 
-var Main = React.createClass({
+    // this.state = {
+    //   title: "",
+    //   startYear:"",
+    //   endYear: "",
+    //   results: []
+    // };
+  }
 
-	getInitialState: function() {
-  	return { 
-  		title: "",
-  		startYear:"",
-  		endYear: "",
-  		results: []
-  	};
-	},
-
-  // The moment the page renders get the History
-  componentDidMount: function() {
+  // When the page renders.
+  componentDidMount() {
     // // Get the latest history.
     // helpers.getHistory().then(function(response) {
     //   console.log(response);
@@ -28,10 +28,10 @@ var Main = React.createClass({
     //     this.setState({ history: response.data });
     //   }
     // }.bind(this));
-  },
+  }
 
-  // If the component changes (i.e. if a search is entered)...
-  componentDidUpdate: function() {
+  // When the component has any changes to it.
+  componentDidUpdate () {
 
     // // Run the query for the address
     // helpers.runQuery(this.state.searchTerm).then(function(data) {
@@ -55,25 +55,25 @@ var Main = React.createClass({
     //     }.bind(this));
     //   }
     // }.bind(this));
-  },
-  // This function allows childrens to update the parent.
-  setTitle: function(titleInput) {
+  }
+  // These functions allows childrens to update the parent.
+  setTitle(titleInput) {
     this.setState({ title: titleInput });
-  },
+  }
 
-  setStartYear: function(startYearInput) {
+  setStartYear(startYearInput) {
     this.setState({ startYear: startYearInput });
-  },
+  }
 
-  setEndYear: function(endYearInput) {
+  setEndYear(endYearInput) {
     this.setState({ endYear: endYearInput });
-  },
+  }
 
-  setResults: function(articleResults) {
+  setResults(articleResults) {
     this.setState({ results: articleResults });
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <div className="container">
         <div className="row">
@@ -95,7 +95,6 @@ var Main = React.createClass({
       </div>
     );
   }
+};
 
-});
-
-module.exports = Main;
+export default Main;

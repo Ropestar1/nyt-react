@@ -1,8 +1,23 @@
-var React = require("react");
-var Link = require("react-router").Link;
+import React from "react";
+import Link from 'react-router-dom';
 
-var Saved = React.createClass({
-  render: function() {
+class Saved extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    // // Get the latest history.
+    // helpers.getHistory().then(function(response) {
+    //   console.log(response);
+    //   if (response !== this.state.history) {
+    //     console.log("History", response.data);
+    //     this.setState({ history: response.data });
+    //   }
+    // }.bind(this));
+  }
+
+  render() {
     return (
       <div className="panel panel-default">
         <div className="panel-heading">
@@ -25,6 +40,6 @@ var Saved = React.createClass({
       </div>
     );
   }
-});
+};
 
-module.exports = Saved;
+export default Saved;

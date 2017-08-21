@@ -1,18 +1,18 @@
-var React = require("react");
-var Link = require("react-router").Link;
+import React from "react";
+import Link from 'react-router-dom';
 
-var Search = React.createClass({
+class Search extends React.Component {
+  constructor(props) {
+    super(props);
 
-  // Here we set a generic state associated with the text being searched for
-  getInitialState: function() {
-    return { 
-      title: "",
+    this.state = { 
+      topic: "",
       start: "",
       end: ""
     };
-  },
+  }
 
-  handleSubmit: function(event) {
+  handleSubmit(event) {
     event.preventDefault();
 
     this.props.setTerm(this.state.term); //setTerm was defined in parent in earlier examples
@@ -21,9 +21,9 @@ var Search = React.createClass({
       start: "",
       end: ""
     });
-  },
-  // Here we describe this component's render method
-  render: function() {
+  }
+
+  render() {
     return (
       <div className="panel panel-default">
         <div className="panel-heading">
@@ -35,26 +35,18 @@ var Search = React.createClass({
               <h3 className="topic">
                 <strong>Topic</strong>
               </h3>
-
-              {/*
-                Note how each of the form elements has an id that matches the state.
-                This is not necessary but it is convenient.
-                Also note how each has an onChange event associated with our handleChange event.
-              */}
               <input
-                // fix below code
                 value={this.state.topic}
                 type="text"
                 className="form-control text-center"
                 id="topic"
-                onChange={this.handleChange}
+                // onChange={this.handleChange}
                 required
               />
               <h3 className="start-year">
                 <strong>Start Year</strong>
               </h3>
               <input
-                // fix below code
                 value={this.state.start}
                 type="text"
                 className="form-control text-center"
@@ -66,18 +58,18 @@ var Search = React.createClass({
                 <strong>End Year</strong>
               </h3>
               <input
-                // fix below code
                 value={this.state.end}
                 type="text"
                 className="form-control text-center"
                 id="end"
-                onChange={this.handleChange}
+                // onChange={this.handleChange}
                 required
               />
               <br />
               <button
                 className="btn btn-primary"
                 type="submit"
+                onClick={this.handleSubmit}
               >
                 Submit
               </button>
@@ -87,6 +79,6 @@ var Search = React.createClass({
       </div>
     );
   }
-});
+};
 
-module.exports = Search;
+export default Search;
